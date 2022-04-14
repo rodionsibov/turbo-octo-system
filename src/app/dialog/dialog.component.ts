@@ -14,11 +14,16 @@ export class DialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.productForm = this.fb.group({
-      productName: ['', Validators.required],
-      category: ['', Validators.required],
-      freshness: ['', Validators.required],
-      price: ['', Validators.required],
-      comment: ['', Validators.required],
+      productName: [''],
+      category: [''],
+      freshness: [''],
+      price: [''],
+      comment: [''],
+      date: [''],
     });
+  }
+
+  addProduct(): void {
+    console.log('addProduct', this.productForm.value);
   }
 }

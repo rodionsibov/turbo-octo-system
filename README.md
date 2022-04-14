@@ -1,5 +1,7 @@
 # Angular13CrudMaterialUi
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0bee8e2f-ac0d-457a-b734-d79a253cb290/deploy-status)](https://app.netlify.com/sites/sweet-cucurucho-34af8d/deploys)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.2.
 
 ## Development server

@@ -8,8 +8,9 @@ import { DialogComponent } from './dialog/dialog.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(public dialog: MatDialog) {}
   title = 'angular-13-crud-material-ui';
+  
+  constructor(public dialog: MatDialog) {}
 
   openDialog() {
     this.dialog.open(DialogComponent, {

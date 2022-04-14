@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dialog.component.css']
 })
 export class DialogComponent implements OnInit {
+  freshnessList = ['Brand New', 'Second New', 'Refurbished']
 
   constructor() { }
 

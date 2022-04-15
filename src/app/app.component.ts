@@ -5,6 +5,7 @@ import { ApiService } from './services/api.service';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-root',
@@ -26,16 +27,27 @@ export class AppComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(public dialog: MatDialog, private api: ApiService) {}
+  constructor(
+    public dialog: MatDialog,
+    private api: ApiService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.getAllProducts();
   }
 
   openDialog(): void {
-    this.dialog.open(DialogComponent, {
-      width: '350px',
-    });
+    this.dialog
+      .open(DialogComponent, {
+        width: '350px',
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val === 'save') {
+          this.getAllProducts();
+        }
+      });
   }
 
   getAllProducts(): void {
@@ -46,15 +58,36 @@ export class AppComponent implements OnInit {
         this.dataSource.sort = this.sort;
       },
       error: (err) => {
-        console.log(`Error while fetching the records: ${err}`);
+        this._snackBar.open(`Error while fetching the products: ${err}`);
       },
     });
   }
 
   editProduct(row: any): void {
-    this.dialog.open(DialogComponent, {
-      width: '350px',
-      data: row,
+    this.dialog
+      .open(DialogComponent, {
+        width: '350px',
+        data: row,
+      })
+      .afterClosed()
+      .subscribe((val) => {
+        if (val === 'update') {
+          this.getAllProducts();
+        }
+      });
+  }
+
+  deleteProduct(id: number): void {
+    this.api.deleteProduct(id).subscribe({
+      next: (res) => {
+        this._snackBar.open('Product deleted successfully', 'Close', {
+          duration: 4000,
+        });
+        this.getAllProducts();
+      },
+      error: (err) => {
+        this._snackBar.open(`Error while deleting the product: ${err}`);
+      },
     });
   }
 

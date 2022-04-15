@@ -48,7 +48,6 @@ export class DialogComponent implements OnInit {
   addProduct(): void {
     if (!this.editData) {
       if (this.productForm.valid) {
-        console.log('addProduct', this.productForm.value);
         this.api.postProduct(this.productForm.value).subscribe({
           next: (res) => {
             this._snackBar.open('Product added successfully', 'Close', {
@@ -68,6 +67,19 @@ export class DialogComponent implements OnInit {
   }
 
   updateProduct(): void {
-    
+    if (this.productForm.valid) {
+      this.api.putProduct(this.productForm.value, this.editData.id).subscribe({
+        next: (res) => {
+          this._snackBar.open('Product updated successfully', 'Close', {
+            duration: 4000,
+          });
+          this.productForm.reset();
+          this.dialogRef.close('update');
+        },
+        error: (err) => {
+          this._snackBar.open(`Error while updating the product: ${err}`);
+        },
+      });
+    }
   }
 }

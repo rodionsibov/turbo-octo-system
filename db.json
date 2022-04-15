@@ -1,67 +1,58 @@
 {
   "productList": [
     {
-      "productName": "Jsdfs",
+      "productName": "Ody",
       "category": "Fruits",
       "freshness": "Brand New",
-      "price": 2783478,
-      "comment": "Very nice",
-      "date": "2001-11-30T22:00:00.000Z",
+      "price": 10,
+      "comment": "Very good",
+      "date": "2000-12-31T22:00:00.000Z",
       "id": 1
     },
     {
-      "productName": "kdfjh",
+      "productName": "Ab",
       "category": "Fruits",
-      "freshness": "Refurbished",
-      "price": 34,
-      "comment": "akldfh",
-      "date": "2033-12-31T22:00:00.000Z",
+      "freshness": "Brand New",
+      "price": 10,
+      "comment": "Very good",
+      "date": "2000-12-31T22:00:00.000Z",
       "id": 2
     },
     {
-      "productName": "kfsjl",
+      "productName": "Ody",
       "category": "Fruits",
-      "freshness": "Second New",
-      "price": 2,
-      "comment": "sa",
+      "freshness": "Brand New",
+      "price": 10,
+      "comment": "Very good",
       "date": "2000-12-31T22:00:00.000Z",
       "id": 3
     },
     {
-      "productName": "sdfj",
-      "category": "Vegetables",
-      "freshness": "Second New",
-      "price": 9347594797,
-      "comment": ".sfjsdlkf;skjfjj j : )",
-      "date": "2001-01-31T22:00:00.000Z",
+      "productName": "Ody",
+      "category": "Fruits",
+      "freshness": "Brand New",
+      "price": 10,
+      "comment": "Very good",
+      "date": "2000-12-31T22:00:00.000Z",
       "id": 4
     },
     {
-      "productName": "kjdkjash",
-      "category": "Vegetables",
+      "productName": "Ody",
+      "category": "Fruits",
       "freshness": "Brand New",
-      "price": 9,
-      "comment": "sdfjhjkls",
-      "date": "3242-01-01T00:00:00.000Z",
+      "price": 10,
+      "comment": "Very good",
+      "date": "2000-12-31T22:00:00.000Z",
       "id": 5
     },
     {
-      "productName": "sjkf",
-      "category": "Vegetables",
-      "freshness": "Refurbished",
-      "price": 987,
-      "comment": "lksfjsdf98 7s89 8f7 8s",
-      "date": "1989-12-31T21:00:00.000Z",
-      "id": 6
-    },
-    {
-      "productName": "6378462436 updated",
+      "productName": "Ody",
       "category": "Fruits",
-      "freshness": "Refurbished",
-      "price": 34,
-      "comment": "akldfh",
-      "date": "2033-12-31T22:00:00.000Z",
-      "id": 7
+      "freshness": "Brand New",
+      "price": 10,
+      "comment": "Very good",
+      "date": "2000-12-31T22:00:00.000Z",
+      "id": 6
     }
   ]
 }

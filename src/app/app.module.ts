@@ -18,6 +18,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+import { ApiService } from './services/api.service';
 
 @NgModule({
   declarations: [AppComponent, DialogComponent],
@@ -35,9 +39,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatSnackBarModule,
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

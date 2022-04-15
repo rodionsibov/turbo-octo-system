@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from '../services/api.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-dialog',
@@ -10,7 +12,11 @@ export class DialogComponent implements OnInit {
   freshnessList = ['Brand New', 'Second New', 'Refurbished'];
   productForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private api: ApiService,
+    private _snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     this.productForm = this.fb.group({
@@ -24,6 +30,16 @@ export class DialogComponent implements OnInit {
   }
 
   addProduct(): void {
-    console.log('addProduct', this.productForm.value);
+    if (this.productForm.valid) {
+      console.log('addProduct', this.productForm.value);
+      this.api.postProduct(this.productForm.value).subscribe({
+        next: (res) => {
+          this._snackBar.open('Product added successfully', 'Close');
+        },
+        error: () => {
+          this._snackBar.open('Error while adding the product')
+        },
+      });
+    }
   }
 }

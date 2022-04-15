@@ -44,6 +44,24 @@
       "comment": "sdfjhjkls",
       "date": "3242-01-01T00:00:00.000Z",
       "id": 5
+    },
+    {
+      "productName": "sjkf",
+      "category": "Vegetables",
+      "freshness": "Refurbished",
+      "price": 987,
+      "comment": "lksfjsdf98 7s89 8f7 8s",
+      "date": "1989-12-31T21:00:00.000Z",
+      "id": 6
+    },
+    {
+      "productName": "6378462436 updated",
+      "category": "Fruits",
+      "freshness": "Refurbished",
+      "price": 34,
+      "comment": "akldfh",
+      "date": "2033-12-31T22:00:00.000Z",
+      "id": 7
     }
   ]
 }

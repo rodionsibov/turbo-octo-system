@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
     'comment',
     'freshness',
     'date',
+    'action',
   ];
   dataSource!: MatTableDataSource<any>;
 
@@ -47,6 +48,13 @@ export class AppComponent implements OnInit {
       error: (err) => {
         console.log(`Error while fetching the records: ${err}`);
       },
+    });
+  }
+
+  editProduct(row: any): void {
+    this.dialog.open(DialogComponent, {
+      width: '350px',
+      data: row,
     });
   }
 

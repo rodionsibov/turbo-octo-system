@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../services/api.service';
+import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-dialog',
@@ -15,7 +16,8 @@ export class DialogComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private api: ApiService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    public dialogRef: MatDialogRef<DialogComponent>
   ) {}
 
   ngOnInit(): void {
@@ -34,10 +36,14 @@ export class DialogComponent implements OnInit {
       console.log('addProduct', this.productForm.value);
       this.api.postProduct(this.productForm.value).subscribe({
         next: (res) => {
-          this._snackBar.open('Product added successfully', 'Close');
+          this._snackBar.open('Product added successfully', 'Close', {
+            duration: 4000
+          });
+          this.productForm.reset();
+          this.dialogRef.close('save');
         },
         error: () => {
-          this._snackBar.open('Error while adding the product')
+          this._snackBar.open('Error while adding the product');
         },
       });
     }

@@ -20,6 +20,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 import { ApiService } from './services/api.service';
 
@@ -42,6 +45,9 @@ import { ApiService } from './services/api.service';
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],

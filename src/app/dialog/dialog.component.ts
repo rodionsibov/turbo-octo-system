@@ -37,15 +37,16 @@ export class DialogComponent implements OnInit {
       this.api.postProduct(this.productForm.value).subscribe({
         next: (res) => {
           this._snackBar.open('Product added successfully', 'Close', {
-            duration: 4000
+            duration: 4000,
           });
           this.productForm.reset();
           this.dialogRef.close('save');
         },
-        error: () => {
-          this._snackBar.open('Error while adding the product');
+        error: (err) => {
+          this._snackBar.open(`Error while adding the product: ${err}`);
         },
       });
+      
     }
   }
 }

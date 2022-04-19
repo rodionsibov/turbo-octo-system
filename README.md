@@ -10,7 +10,7 @@ For this project, you need both the fron-end and back-end running at the same ti
 
 ### Launch the backend
 ```
-npx json-server db.json
+npx json-server --watch db.json
 ```
 
 ## Development server
